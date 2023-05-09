@@ -1,17 +1,23 @@
-let titulo = 
-    document.querySelector('#titulo');
+let h1Titulo = document.querySelector("#h1Titulo");
+let inputTexto = document.querySelector("#inputTexto");
+let btTrocarTexto = document.querySelector("#btTrocarTexto");
 
-let campoTexto = 
-    document.querySelector('#campoTexto'); 
+function alterarTexto(){
+    //Retorna o valor do input e adiciona em uma variavel
+    let texto = String(inputTexto.value); 
+
+    //Adiciona texto ao elemento (somente texto)
+    h1Titulo.textContent = texto;
     
-let btSubstituirTexto =
-    document.querySelector('#btSubstituirTexto');    
+    //Adiciona elementos em html
+    h1Titulo.innerHTML += texto+"<br>" ;
 
-function alteraTitulo(){
-    let texto = String(campoTexto.value);
-    titulo.textContent = texto;
-}    
-
-btSubstituirTexto.onclick = function(){
-    alteraTitulo();
+    //Adiciona CSS ao elemento
+    h1Titulo.style.color = "blue";
+    h1Titulo.style.fontFamily = "Arial";
 }
+
+btTrocarTexto.onclick = function(){
+    alterarTexto();
+}
+
